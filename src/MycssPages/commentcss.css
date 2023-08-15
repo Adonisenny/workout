@@ -1,0 +1,17 @@
+.workout-details2 {
+  
+    color: black;
+    border-radius: 4px;
+     /* margin-top: 20px;
+     margin-left: 20px; */
+     height: auto;
+     
+     padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    
+    position: relative;
+     box-shadow: 2px 2px 12px rgba(0,0,0,0.8); 
+    border-radius: 14px;
+  }
