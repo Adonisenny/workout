@@ -97,7 +97,7 @@ const handleDelete = async() => {
       
             try {
             const response = await axios.get("http://localhost:7000/api/comments")
-           const comms = response.data
+           const comms = await response.data
           
           
             dispatch2({type:'SET_COMMENTS',payload:comms})

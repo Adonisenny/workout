@@ -1,19 +1,26 @@
 import { Link } from 'react-router-dom'
-import { AuthContext } from "../Context/authcontext";
+import { AuthContext } from "../../Context/authcontext";
 import { useContext, useEffect } from 'react';
 import axios from 'axios';
 import { useState } from 'react';
-import Hamburger from './hamburger';
+
 import { useLocation } from 'react-router-dom';
+import Hamburger from '../hamburger';
+import { useCommentContext } from '../../Hooks/useCommentContext';
 
 
-const Navbar = () => {
+const ProfileNavbar = () => {
  
    const  {user,dispatch} = useContext(AuthContext)
   const myusername =user?.username
   const [menuOpen,setMenuOpen] =useState(false)
   const [isdisabled,setIsDisabled] = useState(false)
-
+  const [profileDetails, setProfileDetails] = useState('')
+  const{dispatch2} = useCommentContext();
+  const idlocation = useLocation()
+  
+  const userId = idlocation.pathname.split('/')[2]   
+  const user_id = user?._id
 const location = useLocation()
   const locateProfile = location.pathname.split('/')[1]
  
@@ -41,14 +48,83 @@ useEffect(() => {
 
   }
 
-  // if (!user) {
-  //   return redirect("/login");
-  // }
+
+
+
+
+  useEffect(() => {
+    const fetchit = async() => {
+  
+  
+        try {
+        const response = await axios.get('http://localhost:7000/api/profile')
+        const pdetails = await response.data
+        setProfileDetails(pdetails)
+      
+        dispatch2({payload:pdetails})
+       
+    
+       } catch (error) {
+        console.log(error)
+       }
+    }
+    fetchit()
+},[dispatch2,userId])
+
+  console.log(profileDetails)
+  
   return (
-    <header className='header1'>
-      <div className='bg-slate-800 rounded-[8px]'><Link to="/">
-          <h2>OnlyRumors</h2>
-        </Link></div>
+    <header className='header2 bg-slate-800 rounded-[14px]' >
+        <div className=' only flex '>
+      <Link to="/">
+          <p><i>OnlyRumors</i></p>
+        </Link>
+
+
+
+
+
+        <div className="hikdden md:flex">
+{(profileDetails || null ) && profileDetails?.filter(profileDetail => profileDetail?.userId === user_id).map((filteredprofile) =>{
+  return <div key={filteredprofile?._id}>
+
+
+ <img src={`http://localhost:7000/${filteredprofile?.imageUrl}`} alt="Not seen yet"  className="w-[60px] h-[60px] rounded-[50%]"/>
+    
+   
+  
+    
+    
+   </div>
+   
+})
+
+}
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </div>
         <hr/>
       <div className="container">
         
@@ -66,4 +142,4 @@ useEffect(() => {
   )
 }
 
-export default Navbar
+export default ProfileNavbar;

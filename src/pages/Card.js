@@ -80,7 +80,7 @@ const handleClick = async () => {
 
 
 const mystyle ={
-  backgroundColor:"blue",
+  backgroundColor:"#6A5ACD",
   borderRadius:'12px'
 }
 const mystyles ={
@@ -118,16 +118,14 @@ const likeHandler = () => {
   const filterLikes = rumor?.likes?.filter(rums => rums === user?._id).map((flikes) => {
 return flikes
  })
-//  console.log(user?._id)
-//  console.log(rumor?.likes)
-//  console.log(filterLikes.length)
+
 
 
    
 
 
     return (
-      <div>
+      <div className='scroll-bar'>
         
         <div className="workout-details   bg-transparent" >
         <div >

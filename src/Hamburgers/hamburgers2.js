@@ -36,12 +36,12 @@ return (
 
 {  <Link to='/'>Home</Link>}
 <br />
-{myusername ? <Link onClick={handleLogout}    >Logout</Link>:  <Link to='/register'>Register</Link>}
+{myusername ? <Link onClick={handleLogout}    >Logout</Link>:  <Link to='/registeration'>Register</Link>}
 
 
 
 <br />
-<p>Watch videos</p>
+<Link  to={`/profilesetup/${user?._id}`}>Profile SetUp</Link>
 
     </div>
     </>

@@ -27,11 +27,9 @@ const Home = () => {
            
             const newrumors = await response.json()
             
-           
-            if(response.ok){
-                 dispatch({type:'SET_RUMORS',payload:newrumors})
+           dispatch({type:'SET_RUMORS',payload:newrumors})
                    
-            }
+        
             
            } catch (error) {
             console.log(error)
@@ -69,16 +67,15 @@ const Home = () => {
 
     return ( 
         <div className="Home   md:grid grid-cols-[3fr,1fr] bg-transparent">
-         <div className="workout-details">
-           
+         <div className="workout-details overflow-y-auto ">
+         
     {therumours}
 
-      
-
+    
     </div>
     
     
-   <div className="hidden md:block">
+   <div className="hidden md:block overflow-y-auto">
     
     <SearchBar inputed={inputed} setInputed={setInputed} />
    

@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Context/authcontext";
-import { FaBroom, FaThumbsUp, FaEdit } from "react-icons/fa";
-import { Link, NavLink,useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Hamburgertwo from "../../Hamburgers/hamburgers2.js";
 import axios from "axios";
 import { useCommentContext } from "../../Hooks/useCommentContext";
@@ -64,12 +63,7 @@ const ProfileBanner = ({myprofile}) => {
  })
 
 
-//  rumors?.map((rumor) =>rumor?.likes?.filter(rums=>rums === user._id).map((rum) => {
 
-//   return  console.log(rum.length)
-  
-  
-//   }) )
 const filterit = rumors?.map((rumor) => rumor?.likes?.filter(rums => rums === user?._id))
 
 console.log(filterit)
@@ -79,16 +73,7 @@ console.log(filterit)
 
 <div className="relative flex">
 
-    
-
-
-
-   
-
-
-
-
-   
+     
 <Hamburgertwo handleLogout={handleLogout} setMenuOpen={setMenuOpen} menuOpen={menuOpen} myusername={myusername}/>
 
 </div>

@@ -1,16 +1,17 @@
 import { FaEdit } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { UseContextFunction } from "../Hooks/useWorkoutContext";
+
 import { useCommentContext } from "../Hooks/useCommentContext";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Context/authcontext";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 
+
 const ProfileBanner2 = ({myprofile}) => {
-    const {user,dispatch} = useContext(AuthContext);
+    const {user} = useContext(AuthContext);
     const{dispatch2} = useCommentContext();
-    const {rumors} =UseContextFunction()
+    
     const [profileDetails, setProfileDetails] = useState('')
     
     const user_id = user?._id
@@ -39,26 +40,37 @@ const ProfileBanner2 = ({myprofile}) => {
     },[dispatch2,userId])
 
 
-
+console.log(profileDetails)
 
 
     return (  
 
-<div className="flex flex-col gap-6 items-center justify-center relative">
 
-{(profileDetails || null ) && profileDetails?.filter(profileDetail => profileDetail.userId === user_id).map((filteredprofile) =>(
-   <div key={filteredprofile._id}>
-
-
-<img src={`http://localhost:7000/${filteredprofile?.imageUrl}`} alt="Not seen yet"  className="w-[110px] h-[110px] rounded-[50%]"/>
-    <p>I love you Lord</p>
+<div className="flex flex-col gap-6 items-center justify-center relative ">
     
-    <Link to={`/profilesetup/${user?._id}`} className="text-black absolute top-36 right-[240px] md:right-[660px] "><FaEdit /></Link>
+<div className="md:hidden">
+{(profileDetails || null ) && profileDetails?.filter(profileDetail => profileDetail?.userId === user_id).map((filteredprofile) =>{
+  return <div key={filteredprofile?._id}>
 
+
+ <img src={`http://localhost:7000/${filteredprofile?.imageUrl}`} alt="Not seen yet"  className="w-[110px] h-[110px] rounded-[50%]"/>
+    <p>I love you Lord</p>
+    <Link to={`/profilesetup/${user?._id}`} className="text-black absolute top-36 right-[240px] md:right-[660px] "><FaEdit /></Link>
+  
+    
+    
    </div>
-))}
+   
+})
+
+}
+</div>
+
+   
+
 
 </div>
+
 
     );
 }

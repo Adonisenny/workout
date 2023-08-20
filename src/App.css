@@ -14,14 +14,26 @@
 body {
   background: #f1f1f1;
   background-image:url("images/paper.jpg");
-  /* background-repeat: no-repeat, repeat; */
+  
   margin: 0;
   font-family: "Poppins";
 }
-header {
+/* general navbar */
+.header1 {
   background: #fff;
 }
-header .container {
+
+/* card scroll bar */
+/* .scroll-bar{
+  overflow-x: scroll;
+  height: 10px;
+  
+} */
+.only{
+  column-gap: 1200px;
+  
+}
+.header1 .container {
   max-width: 1400px;
   margin: 0 auto;
   padding: 5px 10px;
@@ -29,15 +41,43 @@ header .container {
   align-items: center; 
    justify-content: flex-end;
    column-gap: 60px; 
+   --tw-bg-opacity: 1;
+    background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+    border-radius: 8px;
+   
 }
-header a {
-  color: #333;
+.header1 a {
+  color: white;
   text-decoration: none;
 }
 .pages{
   max-width: 1400px;
-  padding: 20px;
-  margin: 0 auto;
+  /* padding: 20px;
+  margin: 0 auto; */
+}
+
+/* profile navbar */
+.header2{
+  background-color: none;
+}
+.header2 .container{
+  max-width: 1400px;
+  margin: 0;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center; 
+  color: white;
+  
+   justify-content: flex-end;
+   
+   column-gap: 60px;  
+}
+.header2 a {
+  color:white;
+  text-decoration: none;
+ 
+  padding: 6px;
+  border-radius: 12px;
 }
 
 /* homepage */
@@ -51,8 +91,7 @@ header a {
   
   color: black;
   border-radius: 4px;
-   /* margin-top: 20px;
-   margin-left: 20px; */
+ 
    height: auto;
    
    padding-top: 50px;
@@ -62,6 +101,7 @@ header a {
   
   position: relative;
    box-shadow: 2px 2px 12px rgba(0,0,0,0.8); 
+  
   border-radius: 14px;
 }
 .excluded > .navbar{

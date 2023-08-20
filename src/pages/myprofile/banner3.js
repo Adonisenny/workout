@@ -8,16 +8,16 @@ const ProfileBanner3 = ({myprofile,handleTabChange,activeTab}) => {
 
 
 <div>
-    <p>{PrumorLength}</p>
-    <Link   onClick={() => handleTabChange('rumors')} className={activeTab==="rumors" ? "active-tab":"inactive-tab"}>Rumors</Link>
+   
+    <Link   onClick={() => handleTabChange('rumors')} className={activeTab==="rumors" ? "active-tab":"inactive-tab"}><i>Rumors</i></Link>
 </div>
 <div>
-    <p>12</p>
-    <Link  onClick={() => handleTabChange('likes')} className={activeTab==="likes" ? "active-tab":"inactive-tab"}>Likes</Link>
+    
+    <Link  onClick={() => handleTabChange('likes')} className={activeTab==="likes" ? "active-tab":"inactive-tab"}><i>Likes</i></Link>
 </div>
 <div>
-    <p>11</p>
-    <Link  onClick={() => handleTabChange('comments')} className={activeTab==="comments" ? "active-tab":"inactive-tab"}>Comments</Link>
+    
+    <Link  onClick={() => handleTabChange('comments')} className={activeTab==="comments" ? "active-tab":"inactive-tab"}><i>Comments</i></Link>
 </div>
 
 </div>

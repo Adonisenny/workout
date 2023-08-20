@@ -18,6 +18,9 @@ const Regform = () => {
     
 const mymail= email.includes('@')
 
+
+    
+
     const handleSubmit = async(e) => {
         e.preventDefault()
         const information= {email,username,password}
@@ -52,41 +55,41 @@ const mymail= email.includes('@')
                     const allusers = await response.data
                    
                     setAllUsername(allusers)
-                    
-                    
-                   
-                   
-                
+            
                    } catch (error) {
                     console.log(error)
                    }
                 }
                 fetchit()
-            },[])
+            },[username])
+          
 
 
 
-const checkUsername = allUsername?.filter(allU => {
-   if(allUsername === ''){
-return allU
-   }else if(allU?.username?.toLowerCase().includes(username.toLocaleLowerCase())){
-    console.log("username already exist")
-   }
+
+
+const tryusers =allUsername && allUsername?.map((allu) => {
+  return allu?.username
 })
-
-
-
+const checkusers = tryusers?.includes(username)
+useEffect(()=> {
+    if(checkusers){
+        setError('username already exist')
+    }else{
+        setError('')
+    }
+},[checkusers])
 
 
 
     const  passwordLength =password.length
     useEffect(()=>{
-        if(passwordLength >=8 && mymail){
+        if(passwordLength >=8 && mymail && !checkusers){
             setIsdisabled(false)
         }else{
             setIsdisabled(true)
         }
-    },[passwordLength,mymail])
+    },[passwordLength,mymail,checkusers])
     return (  
 <form className="container">
     <h3>Register</h3>
@@ -123,6 +126,7 @@ value={password}
 />
 
 <button onClick={handleSubmit} disabled={isdisabled}>Submit</button>
+<br /> <br />
 {Error &&  <p style={{"backgroundColor":"white","color":"red","paddingLeft":"30px","paddingTop":"15px",'paddingBottom':'15px','borderRadius':'8px'}}>{Error}</p>}
 <p>If you are registered <Link to='/login'>Login</Link></p>
 </form>
