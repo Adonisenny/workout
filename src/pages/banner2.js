@@ -40,7 +40,7 @@ const ProfileBanner2 = ({myprofile}) => {
     },[dispatch2,userId])
 
 
-console.log(profileDetails)
+
 
 
     return (  

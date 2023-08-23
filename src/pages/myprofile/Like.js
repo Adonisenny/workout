@@ -14,7 +14,7 @@ const Likes = () => {
 const fetchIt = async() => {
    try {
     const res = await axios.get(`http://localhost:7000/api/profile/likes/${userId}`)
-    console.log(res.data)
+   
    } catch (error) {
     console.log('can not not get the data')
    }

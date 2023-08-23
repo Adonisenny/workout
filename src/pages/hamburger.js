@@ -17,9 +17,9 @@ const Hamburger = ({menuOpen,setMenuOpen,handleLogout,myusername}) => {
 <div   className="absolute cursor-pointer md:hidden block top-7 right-2">
 
   {menuOpen ? (
-    <RiCloseLine onClick={handleclick} className='w-6 h-6 text-black mr-2' />
+    <RiCloseLine onClick={handleclick} className='w-6 h-6 text-white mr-2' />
 ):
-<HiOutlineMenu  onClick ={() => setMenuOpen(true)} className='w-6 h-6 text-black mr-2'  />
+<HiOutlineMenu  onClick ={() => setMenuOpen(true)} className='w-6 h-6 text-white mr-2'  />
 }  
 
 

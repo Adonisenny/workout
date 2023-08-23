@@ -1,8 +1,8 @@
-import {useContext, useEffect, useState} from "react"
+import {useEffect, useState} from "react"
 import { UseContextFunction } from "../Hooks/useWorkoutContext.js"
 import Card from "./Card.js"
 import SearchBar from "./searchbar.js"
-import { AuthContext } from "../Context/authcontext.js"
+
 import { Link } from "react-router-dom"
 
 

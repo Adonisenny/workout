@@ -33,6 +33,12 @@ body {
   column-gap: 1200px;
   
 }
+.reglink{
+  text-decoration:underline;
+}
+.loglink{
+  text-decoration: underline;
+}
 .header1 .container {
   max-width: 1400px;
   margin: 0 auto;
@@ -82,8 +88,7 @@ body {
 
 /* homepage */
 .Home {
-  /* display: grid; */
-  /* grid-template-columns: 3fr 1fr; */
+  
   gap: 100px;
   
 }
@@ -164,50 +169,6 @@ form button {
   text-align: left;
 }
 
-/* .myinput{
-  width:50%;
-  margin-left: 25%;
-  background-color: #333;
-} */
-/* .comment-form{
-  width: 600px;
-  margin:  0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-.comment-form h3{
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-
-}
-.comment-form form {
-  display: flex;
-  flex-direction: column;
-}
-.comment-form textarea{
-  height :200px;
-  width: 300px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-bottom: 10px;
-  resize: vertical;
-
-}
-.comment-form button[type='submit']{
-  background-color: #4caf50;
-  color: #fff;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-.comment-form button[type= 'submit']{
-  background-color: #45a049;
-} */
 
 /* ProfileTabs.css */
 
@@ -216,6 +177,7 @@ form button {
 border-bottom: 2px solid #3498db;
  
 }
+
 
 
 

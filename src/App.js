@@ -8,7 +8,7 @@ import Regform from "./pages/regForm";
 import Loginform from "./pages/LoginForm";
 import Profile from "./pages/myprofile/Profile.js";
 import Comments from "./pages/comments";
-import MyComments from "./pages/mycomment.js";
+
 import { useLocation } from 'react-router-dom';
 import RenderNavbar from "./pages/conditionalRendering/RenderNavBar";
 import ProfileSetUP from "./pages/myprofile/ProfileSetUp.js";
@@ -56,11 +56,7 @@ path="/comments/:_id"
 element={<Comments/>}
 
 />
-<Route 
-path="/mycomment"
-element={<MyComments/>}
 
-/>
 
 <Route 
 path="/profilesetup/:_id"
@@ -69,7 +65,7 @@ element={<ProfileSetUP/>}
 />
 
 <Route 
-path="/commentscomments/:_id"
+path="/comments/:_id/commentscomments/:_id"
 element={<CommentsComments/>}
 
 />

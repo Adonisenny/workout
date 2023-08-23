@@ -25,7 +25,7 @@ const CreateForm = ({likes}) => {
      const [isdisabled,setIsDisabled] =useState(false)
     // const [reps,setReps] =useState('')
      const [Error,setError] =useState(null)
-    //   console.log(likes)
+   
     
     // Protecting the form from small words
      let thelength =story.length

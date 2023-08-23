@@ -128,7 +128,7 @@ value={password}
 <button onClick={handleSubmit} disabled={isdisabled}>Submit</button>
 <br /> <br />
 {Error &&  <p style={{"backgroundColor":"white","color":"red","paddingLeft":"30px","paddingTop":"15px",'paddingBottom':'15px','borderRadius':'8px'}}>{Error}</p>}
-<p>If you are registered <Link to='/login'>Login</Link></p>
+<p>If you are registered <Link to='/login' className='loglink'>Login.</Link></p>
 </form>
 
 

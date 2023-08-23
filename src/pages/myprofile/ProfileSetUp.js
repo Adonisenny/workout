@@ -17,41 +17,21 @@ const formData = new FormData()
 formData.append('bio',bio)
 formData.append('image',image)
 formData.append('userId',userId)
-console.log(userId)
+
 
 try{
     const response = await axios.post('http://localhost:7000/api/profile',formData)
     const otherjson = await response.data
-   console.log(otherjson)
+  
     dispatch2({payload:otherjson})
     navigate(`/profile/${userId}`)
 }catch(error){
-    console.log('could not get past the first stage')
+    console.log({error})
 }
     }
 
 
-    // const handleUpload2 = async(e) => {
-
-    //     e.preventDefault()
-    //     const formData = new FormData()
-    //     formData.append('bio',bio)
-    //     formData.append('image',image)
-    //     formData.append('userId',userId)
-    //     console.log(userId)
-        
-    //     try{
-    //         const response = await axios.post(`http://localhost:7000/api/profile/${userId}`,formData)
-    //         const otherjson = await response.data
-    //        console.log(otherjson)
-    //         dispatch2({payload:otherjson})
-    //         navigate(`/profile/${userId}`)
-    //     }catch(error){
-    //         console.log('could not get past the first stage')
-    //     }
-        
-
-    // }
+   
     return ( 
 
 <form  className="text-center mt-[9%]">

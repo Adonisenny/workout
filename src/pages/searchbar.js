@@ -1,8 +1,8 @@
 import axios from 'axios'
-import { useContext, useEffect,useState } from "react";
-import { UseContextFunction } from '../Hooks/useWorkoutContext';
+import { useContext} from "react";
+
 import { AuthContext } from '../Context/authcontext';
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 
@@ -13,9 +13,9 @@ const SearchBar = ({inputed,setInputed}) => {
    
     const {user,dispatch} = useContext(AuthContext);
 
-    const myId = user?._id
+    
      const myusername = user?.username
-    console.log(user)
+   
     
    
  

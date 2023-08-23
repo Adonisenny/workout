@@ -26,20 +26,7 @@ export const LikeProvider =({children}) => {
         setReverse(prev => !prev)
        
 }
-// const checkIfLiked = async(postID) => {
-//     try {
-//         const response = await axios.get(`http://localhost:7000/api/checklikes/${postID}`)
-//         if(response.data.liked){
-//             setLiked(true)
-//         }
-//     } catch (error) {
-//         console.log(error)
-//     }
-// }
-// useEffect(() => {
-//     const postID = 'rumor._id'
-//     checkIfLiked(postID)
-// },[])
+
     const contextValue = {
         likeCount,
         reverse,

@@ -1,4 +1,4 @@
-import { FaComment, FaThumbsUp, FaTrash } from "react-icons/fa";
+import { FaThumbsUp, FaTrash } from "react-icons/fa";
 
 
 
@@ -22,3 +22,6 @@ const FourIcons = ({trydate,color,mystyle,mystyles,Liked,like,handleClick,handle
 }
  
 export default FourIcons;
+
+
+

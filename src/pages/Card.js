@@ -10,10 +10,12 @@ import FourIcons from './fouricons';
 
 
 
+
 const Card = ({rumor,slicedcomms}) => {
   
-const {rumors, dispatch} = UseContextFunction()
+const {dispatch} = UseContextFunction()
 const {user} = useContext(AuthContext)
+
 const myusername =user?.username
 
 
@@ -31,7 +33,7 @@ useEffect(() => {
 const handleDivRef = (event) => {
   if(divref.current && !divref.current.contains(event.target)){
 setAddLink(true)
-console.log('this is how we go')
+
   }
 
 
@@ -97,7 +99,7 @@ useEffect(() => {
 
 
 const likeHandler = () => {
-  console.log('like handler')
+  
   try {
     axios.put("http://localhost:7000/api/rumors/" + rumor._id + "/like", { theId: user._id });
   } catch (err) {}
@@ -120,8 +122,7 @@ return flikes
  })
 
 
-
-   
+  
 
 
     return (
@@ -135,7 +136,7 @@ return flikes
         </div> 
 <div>
  
-    
+   
           <div>
   <span> <Link to={`/comments/${rumor._id}`}  className="absolute left-[45px] bottom-[12px]"  ><FaComment/></Link></span>
 
