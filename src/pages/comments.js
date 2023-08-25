@@ -6,7 +6,7 @@ import axios from "axios";
 
 import '../MycssPages/commentcss.css'
 import { AuthContext } from "../Context/authcontext";
-import { Link,useLocation } from 'react-router-dom';
+import {useLocation } from 'react-router-dom';
 
 import CommentContent from "./commentContent";
 
@@ -132,7 +132,7 @@ const matchedcomments = comments?.filter(cums =>cums?.myid === locateAccount).ma
     return ( 
         <div className="mt-8">
         <form className="text-center ">
-<textarea cols="50" rows="4" 
+<textarea cols="40" rows="4" 
 
 className=" bg-slate-800 text-red rounded-[12px]"
 value={thecomments}
