@@ -60,7 +60,7 @@ const handleClick = async () => {
   
    
    try {
-    const deletejson = await axios.delete("http://localhost:7000/api/rumors/" + rumor._id)
+    const deletejson = await axios.delete("https://onlyrums.onrender.com/" + rumor._id)
     const ideleted = await deletejson.data
     
     dispatch({type:'DELETE_RUMORS', payload:ideleted})
@@ -101,7 +101,7 @@ useEffect(() => {
 const likeHandler = () => {
   
   try {
-    axios.put("http://localhost:7000/api/rumors/" + rumor._id + "/like", { theId: user._id });
+    axios.put("https://onlyrums.onrender.com/" + rumor._id + "/like", { theId: user._id });
   } catch (err) {}
   setLike(isLiked ? like - 1 : like + 1);
   setIsLiked(!isLiked);
