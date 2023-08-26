@@ -61,9 +61,9 @@
   "eject": "react-scripts eject",
   "install-server":"cd backend && npm install",
   "start-server":"cd backend && node app.js",
-  "install-client":"cd client && npm install",
-  "build-client":"cd client && npm run build",
-  "start-client":"cd client && npm run start"
+  "install-client":"cd workout && npm install",
+  "build-client":"cd workout && npm run build",
+  "start-client":"cd workout && npm run start"
  
   },
  
